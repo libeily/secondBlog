@@ -1,0 +1,64 @@
+---
+layout: default
+---
+
+<div class=" home leftBlog">
+  <div class="blog blogIndex">
+    <div class="tag">
+      <div class="blogTimer">BaybayLee</div>
+      <div class="blogClass">ALL</div>
+    </div>
+    <h1 class="cssTitle">所有文章</h1>
+    <ul class="post-list cssIndexContent">
+      {% for post in paginator.posts %}
+      <li>
+        <h2>
+          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+          <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
+        </h2>
+      </li>
+      {% endfor %}
+    </ul>
+    <div class="pagination">
+      {% if paginator.total_pages > 1 %}
+      <div class="pagination">
+        {% if paginator.previous_page %}
+        <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">&laquo; Prev</a>
+        {% else %}
+        <span>&laquo; Prev</span>
+        {% endif %}
+
+        {% for page in (1..paginator.total_pages) %}
+        {% if page == paginator.page %}
+        <em>{{ page }}</em>
+        {% elsif page == 1 %}
+        <a href="{{ '/index.html' | prepend: site.baseurl | replace: '//', '/' }}">{{ page }}</a>
+        {% else %}
+        <a href="{{ site.paginate_path | prepend: site.baseurl | replace: '//', '/' | replace: ':num', page }}">{{ page }}</a>
+        {% endif %}
+        {% endfor %}
+
+        {% if paginator.next_page %}
+        <a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">Next &raquo;</a>
+        {% else %}
+        <span>Next &raquo;</span>
+        {% endif %}
+      </div>
+      {% endif %}
+    </div>
+  </div>
+</div>
+<div class="rightGuide">
+  <!--<div class="search">-->
+    <!--<input type="text" placeholder="暂无实现"/>-->
+    <!--<a href="#">Go</a>-->
+  <!--</div>-->
+  <div class="classification">
+    <ul>
+      <li><a href="../htmlIndex/htmlIndex.html" class="title">HTML</a></li>
+      <li><a href="cssIndex.html" class="title">CSS</a></li>
+      <li><a href="../javaScriptIndex/javaScriptIndex.html" class="title">JavaScript</a></li>
+      <li><a href="../othersIndex/othersIndex.html" class="title">其他文章</a></li>
+    </ul>
+  </div>
+</div>
