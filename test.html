@@ -55,12 +55,10 @@ layout: default
   <!--</div>-->
   <div class="classification">
     <ul>
-      {% for tag in site.tags %}
-      {% assign t = tag | first %}
-      {% assign posts = tag | last %}
-      <li><a href="/paper.html#{{ tag[0] }}">{{t | downcase | replace:" ","-" }}</a></li>
-      {% endfor %}
-      <li><a href="/paper.html" class="title">其他文章</a></li>
+      <li><a href="../htmlIndex/htmlIndex.html" class="title">HTML</a></li>
+      <li><a href="cssIndex.html" class="title">CSS</a></li>
+      <li><a href="../javaScriptIndex/javaScriptIndex.html" class="title">JavaScript</a></li>
+      <li><a href="../othersIndex/othersIndex.html" class="title">其他文章</a></li>
     </ul>
   </div>
 </div>

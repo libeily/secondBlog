@@ -3,6 +3,9 @@
   <div class=" wrapper containe title nav">
     <a class="myIcon" href="{{ site.baseurl }}/">{{site.title}}</a>
       <ul class="trigger">
+        <li class="page-link" >
+          <a href="/">主页</a>
+        </li>
         {% for my_page in site.pages %}
           {% if my_page.title %}
           <li class="page-link" >

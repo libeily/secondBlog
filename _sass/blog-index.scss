@@ -31,10 +31,7 @@ a{
   position: relative;
   color: #ffffff;
 }
-.containe{
-  width: 980px;
-  margin: 0 auto;
-}
+
 .header .gitIcon{
   float: right;
   position: absolute;
@@ -179,6 +176,7 @@ a{
   clear: both;
   width: 100%;
   height: 140px;
+  z-index: 5;
 }
 .footer-heading{
   cursor: pointer;
@@ -274,7 +272,7 @@ a{
 .blogTimer{
   background:#522a5c;
 }
-.blogClass{
+a.blogClass {
   background:#a660b7 ;
   display: block;
   /*width:40px;*/
@@ -282,6 +280,7 @@ a{
   color: #ffffff;
   cursor: pointer;
 }
+
 .blogContent{
   margin-bottom: 20px;
   padding: 10px 40px;
@@ -302,7 +301,7 @@ a{
   color: #000;
   line-height: 30px;
 }
-.search a:hover,.pages a:hover ,.pages a.current{
+.search a:hover,.pages a:hover ,.pages a.active{
   background: #a660b7;
   color: #fff;
 }
@@ -350,6 +349,7 @@ a{
 .classification li a{
   color: #666;
   font-weight: bold;
+  font-size: 16px;
 }
 .classification li:hover{
   cursor: pointer;
@@ -631,7 +631,7 @@ a{
 }
 .resumeContent{
   position: relative;
-  z-index: 2;
+  z-index: 3;
 }
 .resumeBlock{
   width: 500px;
@@ -755,4 +755,32 @@ h2{
   -o-box-shadow: 0 1px 2px rgba(0,0,0,0.4),0 0 30px rgba(10,10,0,0.1);
   background-color: #f8f8fd;
 }
+.page-content{
+  min-height: 700px;
+}
 
+.tag-box{
+  list-style: none;
+  margin: 0;
+  padding: 5px 0;
+  overflow: hidden;
+}
+.tag-box li {
+  float: left;
+}
+.tag-box a {
+  display: inline-block;
+  padding: 1px 8px;
+  margin: 2px;
+  color:white;
+  background: rgba(0, 0, 0, 0.6);
+  border-radius: 3px;
+  text-decoration: none;
+}
+.tag-box a:hover{
+  background: rgba(0, 0, 0, 0.8);
+}
+.tag-box a span {
+  vertical-align: super;
+  font-size: 0.8em;
+}

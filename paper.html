@@ -2,7 +2,13 @@
 layout: page
 title: 文章分类
 ---
-
+<ul class="tag-box">
+    {% for tag in site.tags %}
+    {% assign t = tag | first %}
+    {% assign posts = tag | last %}
+    <li><a href="#{{ tag[0] }}">{{t | downcase | replace:" ","-" }} <span>{{ posts | size }}</span> </a></li>
+    {% endfor %}
+</ul>
 <div id="post-list">
     {% for tag in site.tags %}
     <h2 id="{{ tag[0] }}">{{ tag[0] | capitalize }}</h2>
